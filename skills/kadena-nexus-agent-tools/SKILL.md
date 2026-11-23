@@ -18,7 +18,7 @@ Ask once without payment to read the price (HTTP 402), then ask again with the p
 | Choosing which chain to send on | `https://agentpay.kadena.ws/v1/fees` (all 13) or `https://agentpay.kadena.ws/v1/fees/CHAIN` | $0.01 / $0.002 |
 | Checking on a schedule for new hacks and the addresses named | `https://agentpay.kadena.ws/v1/incidents` | $0.03 |
 | Checking on a schedule for unusual exchange or bridge outflows | `https://agentpay.kadena.ws/v1/early-warnings` | $0.05 |
-| Delivering a file the recipient may want to check later | `https://agentpay.kadena.ws/v1/proof/COMMITMENT` | 0.005 KDA, KDA only |
+| Delivering a file the recipient may want to check later | `https://agentpay.kadena.ws/v1/proof/COMMITMENT` | $0.005 |
 
 Preflight already runs the address check, the freeze check and the fee lookup: do not call those separately as well.
 
@@ -38,7 +38,7 @@ Preflight already runs the address check, the freeze check and the fee lookup: d
 
 1. Make 32 random bytes as a salt. commitment = SHA-256(salt bytes followed by the 32 bytes of SHA-256 of the file), 64 lowercase hex.
 2. Save the salt, the file's SHA-256 and the commitment before paying.
-3. Pay `https://agentpay.kadena.ws/v1/proof/COMMITMENT` in KDA. Then read `https://agentpay.kadena.ws/v1/proof/status/COMMITMENT` (free) until it says confirmed.
+3. Pay `https://agentpay.kadena.ws/v1/proof/COMMITMENT`. Then read `https://agentpay.kadena.ws/v1/proof/status/COMMITMENT` (free) until it says confirmed.
 4. Give the recipient the file and the receipt. Anyone can check them at https://kadena.ws/proof/.
 A match shows the file was recorded in that block. It does not show who wrote it or that it is correct.
 
