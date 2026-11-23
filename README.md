@@ -11,7 +11,7 @@ Give an AI agent a check before it pays an address, the cheapest chain for a tra
 | Early warnings | `https://agentpay.kadena.ws/v1/early-warnings` | $0.05 |
 | Gas fees on 13 chains | `https://agentpay.kadena.ws/v1/fees` | $0.01 |
 | Gas fee on one chain | `https://agentpay.kadena.ws/v1/fees/{chain}` | $0.002 |
-| Receipt Proof | `https://agentpay.kadena.ws/v1/proof/{commitment}` | 0.005 KDA (KDA only for now) |
+| Receipt Proof | `https://agentpay.kadena.ws/v1/proof/{commitment}` | $0.005 |
 
 Prices are read live from the [catalog](https://agentpay.kadena.ws/v1). Every tool has a free sample that shows the shape of its answer: `https://agentpay.kadena.ws/v1/sample/{tool}`.
 
