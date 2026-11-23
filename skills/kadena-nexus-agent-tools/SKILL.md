@@ -39,7 +39,7 @@ Preflight already runs the address check, the freeze check and the fee lookup: d
 1. Make 32 random bytes as a salt. commitment = SHA-256(salt bytes followed by the 32 bytes of SHA-256 of the file), 64 lowercase hex.
 2. Save the salt, the file's SHA-256 and the commitment before paying.
 3. Pay `https://agentpay.kadena.ws/v1/proof/COMMITMENT`. Then read `https://agentpay.kadena.ws/v1/proof/status/COMMITMENT` (free) until it says confirmed.
-4. Give the recipient the file and the receipt. Anyone can check them at https://kadena.ws/proof/.
+4. The answer has `receiptLink`. Replace SALT in it with your salt as 64 hex characters, and give the recipient the file and that link. It opens https://kadena.ws/proof/ with the receipt filled in; after a match the page prints a certificate with a QR code.
 A match shows the file was recorded in that block. It does not show who wrote it or that it is correct.
 
 ## More
